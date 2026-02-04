@@ -1,0 +1,74 @@
+# ===============================
+# Maven
+# ===============================
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Allow target inside src if any
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ===============================
+# Logs
+# ===============================
+*.log
+logs/
+
+# ===============================
+# OS Files
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# Spring Boot
+# ===============================
+HELP.md
+
+# ===============================
+# STS / Eclipse
+# ===============================
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# ===============================
+# IntelliJ IDEA
+# ===============================
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# ===============================
+# NetBeans
+# ===============================
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+
+# ===============================
+# Temporary Files
+# ===============================
+*.swp
+*.swo
+*~
+
+# ===============================
+# Environment Files
+# ===============================
+.env
+.env.*
+application-local.properties
+
