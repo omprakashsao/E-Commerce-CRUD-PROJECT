@@ -1,8 +1,8 @@
-package com.omps.e_commerce.service;
+package com.omps.ecommerce.service;
 
-import com.omps.e_commerce.exception.ItemNotFoundException;
-import com.omps.e_commerce.model.Item;
-import com.omps.e_commerce.repository.ItemRepository;
+import com.omps.ecommerce.exception.ItemNotFoundException;
+import com.omps.ecommerce.model.Item;
+import com.omps.ecommerce.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

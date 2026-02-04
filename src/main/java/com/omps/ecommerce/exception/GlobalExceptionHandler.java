@@ -1,6 +1,6 @@
-package com.omps.e_commerce.exception;
+package com.omps.ecommerce.exception;
 
-import com.omps.e_commerce.model.CustomInfoError;
+import com.omps.ecommerce.model.CustomInfoError;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;

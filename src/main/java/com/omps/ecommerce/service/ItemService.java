@@ -1,6 +1,6 @@
-package com.omps.e_commerce.service;
+package com.omps.ecommerce.service;
 
-import com.omps.e_commerce.model.Item;
+import com.omps.ecommerce.model.Item;
 import java.util.List;
 
 /**

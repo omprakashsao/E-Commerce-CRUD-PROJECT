@@ -1,4 +1,4 @@
-package com.omps.e_commerce.exception;
+package com.omps.ecommerce.exception;
 
 /**
  * Custom exception thrown when an Item

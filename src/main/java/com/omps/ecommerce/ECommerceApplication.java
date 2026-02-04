@@ -1,4 +1,4 @@
-package com.omps.e_commerce;
+package com.omps.ecommerce;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

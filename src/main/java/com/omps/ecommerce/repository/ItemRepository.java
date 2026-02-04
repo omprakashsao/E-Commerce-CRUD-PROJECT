@@ -1,6 +1,6 @@
-package com.omps.e_commerce.repository;
+package com.omps.ecommerce.repository;
 
-import com.omps.e_commerce.model.Item;
+import com.omps.ecommerce.model.Item;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

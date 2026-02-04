@@ -1,4 +1,4 @@
-package com.omps.e_commerce.model;
+package com.omps.ecommerce.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

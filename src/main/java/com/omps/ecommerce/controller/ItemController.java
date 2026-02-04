@@ -1,7 +1,7 @@
-package com.omps.e_commerce.controller;
+package com.omps.ecommerce.controller;
 
-import com.omps.e_commerce.model.Item;
-import com.omps.e_commerce.service.ItemService;
+import com.omps.ecommerce.model.Item;
+import com.omps.ecommerce.service.ItemService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
