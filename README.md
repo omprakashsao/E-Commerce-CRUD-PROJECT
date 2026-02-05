@@ -638,22 +638,49 @@ docker push omprakashsao/ecommerce-api:latest
 
 ---
 
-# DEPLOYMENT USING RAILWAY OR AWS EC2
+<div align= "center"  >
+
+  ## 🚀 DEPLOYMENT USING RAILWAY OR AWS EC2
+</div>
 
 
-## Deploy on Railway Using Docker Image
+<div align="center">
 
-Open Railway:
+# 🚄 Deploy Application on Railway Using Docker Image
+### 🐳 Cloud Deployment Guide
 
+Deploy your Dockerized Spring Boot application easily on Railway cloud platform.
+
+</div>
+
+---
+
+## 📌 Step 1 — Open Railway Platform
+Open Railway website:
+y
+```
 https://railway.app
+```
 
-Create project:
+Login using GitHub or email account.
+
+---
+
+## 🚀 Step 2 — Create New Deployment
+
+Create a new project:
 
 ```
 New Project → Deploy from Docker Image
 ```
 
-Provide image:
+Railway will ask for Docker image details.
+
+---
+
+## 📦 Step 3 — Provide Docker Image
+
+Provide your Docker Hub image name:
 
 ```
 <dockerhub-username>/ecommerce-api:latest
@@ -665,19 +692,23 @@ Example:
 omprakashsao/ecommerce-api:latest
 ```
 
-Railway automatically deploys the container.
+Railway automatically pulls the image and deploys the container.
 
 ---
 
-### Access Live Application on Railway
+## 🌐 Step 4 — Access Live Application
+
+After deployment:
 
 1. Open Railway dashboard:
 
+```
 https://railway.app
+```
 
 2. Open your deployed project.
 
-3. Click your deployed service (container).
+3. Click the deployed service (container).
 
 4. Open the **Settings** tab.
 
@@ -688,44 +719,70 @@ https://railway.app
 ```
 Generate Domain
 ```
+
 or
+
 ```
 Enable Public Networking
 ```
 
-7. Railway automatically generates a public URL:
+Railway automatically creates a public URL:
 
 ```
 https://your-app.up.railway.app
 ```
 
-8. Access Swagger UI using:
+---
+
+## 🔍 Step 5 — Open Swagger UI
+
+Access your APIs using:
 
 ```
 https://your-app.up.railway.app/swagger-ui.html
 ```
 
+Swagger UI allows direct API testing from browser.
+
 ---
 
-### Important Notes
-- Railway does NOT provide raw public IP.
+## ⚠️ Important Notes
+
+- Railway does **not provide raw public IP**.
 - Railway automatically assigns a public domain.
-- No manual IP configuration is required.
-- Ensure application port is correctly configured (usually 8081).
+- No manual networking configuration is required.
+- Application port must match container port.
 
 ---
 
-### Optional: Configure Port Variable
-If needed, set environment variable:
+## ⚙️ Optional — Configure Application Port
+
+If Railway requires manual port configuration:
+
+Go to:
+
+```
+Service → Variables
+```
+
+Add variable:
 
 ```
 PORT=8081
 ```
 
-in Railway → Variables section.
+Then redeploy service.
 
+
+
+
+
+## ✅ Deployment Completed Successfully
+
+### 🎉 Your application is now publicly accessible via Railway.
 
 ---
+
 
 <div align="center">
 
