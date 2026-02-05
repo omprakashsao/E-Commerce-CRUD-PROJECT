@@ -6,18 +6,23 @@ The project is designed to demonstrate backend development skills, API design, v
 # What the Application Does
 ## The application manages item data, where each item contains:
 
-- Unique ID
-- Name
-- Description
-- Price
-- Creation timestamp
-- Users can:
-- Add new items
-- Fetch item details
-- Retrieve all items
-- Update item information
-- Delete items
-- All operations are performed through HTTP APIs.
+
+
+## 📦 Item Fields & Supported Operations
+
+![Unique ID](https://img.shields.io/badge/Unique%20ID-blue)
+![Name](https://img.shields.io/badge/Name-green)
+![Description](https://img.shields.io/badge/Description-orange)
+![Price](https://img.shields.io/badge/Price-red)
+![Creation Timestamp](https://img.shields.io/badge/Creation%20Timestamp-purple)
+
+![Add Item](https://img.shields.io/badge/Add%20Items-success)
+![Fetch Item](https://img.shields.io/badge/Fetch%20Items-blue)
+![Retrieve All](https://img.shields.io/badge/Retrieve%20All-yellow)
+![Update Item](https://img.shields.io/badge/Update%20Item-orange)
+![Delete Item](https://img.shields.io/badge/Delete%20Item-red)
+![HTTP APIs](https://img.shields.io/badge/HTTP%20REST%20APIs-lightgrey)
+
 
 # 🚀 Key Features Implemented
 
