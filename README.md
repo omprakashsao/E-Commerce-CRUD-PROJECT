@@ -638,7 +638,10 @@ docker push omprakashsao/ecommerce-api:latest
 
 ---
 
-### Step 6: Deploy on Railway Using Docker Image
+# DEPLOYMENT USING RAILWAY OR AWS EC2
+
+
+## Deploy on Railway Using Docker Image
 
 Open Railway:
 
@@ -666,7 +669,7 @@ Railway automatically deploys the container.
 
 ---
 
-### Step 7: Access Live Application on Railway
+### Access Live Application on Railway
 
 1. Open Railway dashboard:
 
@@ -723,6 +726,186 @@ in Railway → Variables section.
 
 
 ---
+
+<div align="center">
+
+# 🚀 AWS EC2 Deployment Guide  
+### 🐳 Spring Boot Dockerized Application
+
+Deploy your **Spring Boot REST API** on AWS EC2 using Docker and make it publicly accessible.
+
+</div>
+
+---
+
+## 📌 Overview
+This guide walks through deploying the Dockerized application to an **AWS EC2 Ubuntu server**, enabling public access via EC2 public IP.
+
+---
+
+## 🧭 Step 1 — Launch EC2 Instance
+1. Login to AWS Console.
+2. Navigate to **EC2 Dashboard → Launch Instance**.
+3. Choose **Ubuntu Server (latest LTS)**.
+4. Select instance type **t2.micro** (free tier).
+5. Create or select an existing key pair.
+6. Configure storage as needed.
+7. Configure Security Group rules:
+   - Allow **SSH (Port 22)**.
+   - Allow **Custom TCP Port 8081** for application access.
+8. Launch the instance.
+
+---
+
+## 🔐 Step 2 — Connect to EC2 Instance
+
+Download your key pair (.pem) and connect:
+
+```bash
+ssh -i <your-key.pem> ubuntu@<EC2-PUBLIC-IP>
+```
+
+Example:
+
+```bash
+ssh -i ec2-key.pem ubuntu@13.xxx.xxx.xxx
+```
+
+---
+
+## ⚙️ Step 3 — Install Docker on EC2
+
+Update packages:
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+```
+
+Install Docker:
+
+```bash
+sudo apt install docker.io -y
+```
+
+Start Docker service:
+
+```bash
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+
+(Optional) Run Docker without sudo:
+
+```bash
+sudo usermod -aG docker ubuntu
+```
+
+Logout and reconnect.
+
+Verify installation:
+
+```bash
+docker --version
+```
+
+---
+
+## 📦 Step 4 — Pull Docker Image
+
+Pull application image from Docker Hub:
+
+```bash
+docker pull <dockerhub-username>/ecommerce-api:latest
+```
+
+Example:
+
+```bash
+docker pull omprakashsao/ecommerce-api:latest
+```
+
+---
+
+## ▶️ Step 5 — Run Application Container
+
+Run container in background mode:
+
+```bash
+docker run -d -p 8081:8081 \
+--name ecommerce-app \
+--restart always \
+<dockerhub-username>/ecommerce-api:latest
+```
+
+Check container status:
+
+```bash
+docker ps
+```
+
+---
+
+## 🌐 Step 6 — Access Application
+
+Open browser:
+
+```
+http://<EC2-PUBLIC-IP>:8081/swagger-ui.html
+```
+
+Example:
+
+```
+http://13.xxx.xxx.xxx:8081/swagger-ui.html
+```
+
+Swagger UI allows testing APIs directly.
+
+---
+
+## 🛠️ Step 7 — Useful Docker Commands
+
+View logs:
+
+```bash
+docker logs ecommerce-app
+```
+
+Stop container:
+
+```bash
+docker stop ecommerce-app
+```
+
+Start container:
+
+```bash
+docker start ecommerce-app
+```
+
+Restart container:
+
+```bash
+docker restart ecommerce-app
+```
+
+Remove container:
+
+```bash
+docker rm -f ecommerce-app
+```
+
+---
+
+<div align="center">
+
+## ✅ Deployment Completed Successfully
+
+🎉 Your Spring Boot application is now live on AWS EC2 and accessible publicly.
+
+</div>
+
 
 ### Step 8: Pull and Run Image from Docker Hub (Optional)
 
