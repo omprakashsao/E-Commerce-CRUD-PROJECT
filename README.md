@@ -172,6 +172,16 @@ https://spring.io/tools#eclipse
 
 ### ✅ 3. Clone the Repository
 
+If Git is not installed on your system, download and install it first:
+
+https://git-scm.com/downloads
+
+After installation, verify Git is available:
+
+```bash
+git --version
+```
+
 Clone the project from GitHub:
 
 ```bash
