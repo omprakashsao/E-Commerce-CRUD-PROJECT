@@ -22,28 +22,29 @@ The project is designed to demonstrate backend development skills, API design, v
 # 🚀 Key Features Implemented
 
 ## 1. RESTful API Design
- - APIs follow REST principles using HTTP methods:
-Operation	    Method
-Create item	  POST
-Fetch item	  GET
-Update item	  PUT
-Delete item	  DELETE
+### APIs follow REST principles using HTTP methods:
+   
+- Operation	    Method
+- Create item	  POST
+- Fetch item	  GET
+- Update item	  PUT
+- Delete item	  DELETE
 
 ## 2. In-Memory Storage
 
-Items are stored using:
-ArrayList<Item>
-instead of a database.
-This keeps the project simple and fast for demonstration purposes.
-Note: Data resets when application restarts.
+- Items are stored using:
+- ArrayList<Item>
+- instead of a database.
+- This keeps the project simple and fast for demonstration purposes.
+- Note: Data resets when application restarts.
 
 ## 3. Input Validation
 
-User inputs are validated using annotations:
-Item name required
-Description required
-Price must be positive
-Invalid data returns structured error responses.
+- User inputs are validated using annotations:
+- Item name required
+- Description required
+- Price must be positive
+- Invalid data returns structured error responses.
 
 ## 4. Exception Handling
 
@@ -61,14 +62,36 @@ Invalid data returns structured error responses.
 
 ## 6. Swagger API Documentation
 
-Swagger UI automatically documents APIs and allows testing APIs directly from browser.
+### Swagger UI automatically documents APIs and allows testing APIs directly from browser.
 
 ## 7. Clean Project Structure
 
-Project follows layered architecture:
+e-commerce
+│
+├── src/main/java/com.omps.e_commerce
+│   ├── controller
+│   │    └── ItemController
+│   │
+│   ├── exception
+│   │    ├── GlobalExceptionHandler
+│   │    └── ItemNotFoundException
+│   │
+│   ├── model
+│   │    ├── Item
+│   │    └── CustomInfoError
+│   │
+│   ├── repository
+│   │    └── ItemRepository
+│   │
+│   ├── service
+│   │    ├── ItemService
+│   │    └── ItemServiceImpl
+│   │
+│   └── ECommerceApplication
+│
+└── resources
+    └── application.properties
 
-Controller → Service → Repository
-making the code easy to maintain and extend.
 
 # ✅ Technical Implementation Highlights
 
@@ -107,6 +130,8 @@ making the code easy to maintain and extend.
 - Caching
 - Docker deployment
 - Cloud deployment
+
+
 
 
 
