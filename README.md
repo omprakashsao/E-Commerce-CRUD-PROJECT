@@ -540,6 +540,211 @@ All errors are handled gracefully without crashing the application, ensuring rob
 
 ---
 
+## 🐳 Docker Installation, Image Build and Deployment Guide
+
+### Step 1: Install Docker
+Download and install Docker Desktop:
+
+https://www.docker.com/products/docker-desktop/
+
+Verify installation:
+
+```bash
+docker --version
+```
+
+Make sure Docker Desktop is running.
+
+---
+
+### Step 2: Build Docker Image
+
+Move to project directory:
+
+```bash
+cd E-Commerce-CRUD-PROJECT
+```
+
+Build Docker image:
+
+```bash
+docker build -t ecommerce-api .
+```
+
+---
+
+### Step 3: Run Container Locally (Verify Application)
+
+Run container:
+
+```bash
+docker run -p 8081:8081 ecommerce-api
+```
+
+Open browser and verify:
+
+Swagger UI:
+```
+http://localhost:8081/swagger-ui.html
+```
+
+Stop container:
+
+```bash
+Ctrl + C
+```
+
+---
+
+### Step 4: Login to Docker Hub
+
+Login:
+
+```bash
+docker login
+```
+
+Create account if needed:
+
+https://hub.docker.com/
+
+---
+
+### Step 5: Tag and Push Image to Docker Hub
+
+Tag image:
+
+```bash
+docker tag ecommerce-api <dockerhub-username>/ecommerce-api:latest
+```
+
+Example:
+
+```bash
+docker tag ecommerce-api omprakashsao/ecommerce-api:latest
+```
+
+Push image:
+
+```bash
+docker push <dockerhub-username>/ecommerce-api:latest
+```
+
+Example:
+
+```bash
+docker push omprakashsao/ecommerce-api:latest
+```
+
+---
+
+### Step 6: Deploy on Railway Using Docker Image
+
+Open Railway:
+
+https://railway.app
+
+Create project:
+
+```
+New Project → Deploy from Docker Image
+```
+
+Provide image:
+
+```
+<dockerhub-username>/ecommerce-api:latest
+```
+
+Example:
+
+```
+omprakashsao/ecommerce-api:latest
+```
+
+Railway automatically deploys the container.
+
+---
+
+### Step 7: Access Live Application on Railway
+
+1. Open Railway dashboard:
+
+https://railway.app
+
+2. Open your deployed project.
+
+3. Click your deployed service (container).
+
+4. Open the **Settings** tab.
+
+5. Go to **Networking** section.
+
+6. Click:
+
+```
+Generate Domain
+```
+or
+```
+Enable Public Networking
+```
+
+7. Railway automatically generates a public URL:
+
+```
+https://your-app.up.railway.app
+```
+
+8. Access Swagger UI using:
+
+```
+https://your-app.up.railway.app/swagger-ui.html
+```
+
+---
+
+### Important Notes
+- Railway does NOT provide raw public IP.
+- Railway automatically assigns a public domain.
+- No manual IP configuration is required.
+- Ensure application port is correctly configured (usually 8081).
+
+---
+
+### Optional: Configure Port Variable
+If needed, set environment variable:
+
+```
+PORT=8081
+```
+
+in Railway → Variables section.
+
+
+---
+
+### Step 8: Pull and Run Image from Docker Hub (Optional)
+
+Pull image:
+
+```bash
+docker pull <dockerhub-username>/ecommerce-api:latest
+```
+
+Run container:
+
+```bash
+docker run -p 8081:8081 <dockerhub-username>/ecommerce-api:latest
+```
+
+---
+
+## ✅ Deployment Complete
+
+Application is now live and ready for demo or evaluation.
+
+
 ## 🛠 Technical Implementation Highlights
 
 - Spring Boot REST API
