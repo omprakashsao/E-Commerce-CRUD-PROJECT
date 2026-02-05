@@ -8,6 +8,8 @@ WORKDIR /app
 
 # Copy project files
 COPY pom.xml .
+RUN mvn dependency:go-offline
+
 COPY src ./src
 
 # Build jar (skip tests for faster build)
