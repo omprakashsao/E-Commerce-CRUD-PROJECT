@@ -4,66 +4,99 @@ The application allows users or client applications to perform CRUD operations (
 The project is designed to demonstrate backend development skills, API design, validation, and exception handling without using an external database by utilizing in-memory storage.
 
 # What the Application Does
-## The application manages item data, where each item contains:
+## 📦 The application manages item data, where each item contains:
 
+![Unique ID](https://img.shields.io/badge/ITEM-Unique%20ID-blue?style=for-the-badge)
+![Name](https://img.shields.io/badge/FIELD-Name-green?style=for-the-badge)
+![Description](https://img.shields.io/badge/FIELD-Description-orange?style=for-the-badge)
+![Price](https://img.shields.io/badge/FIELD-Price-red?style=for-the-badge)
+![Created At](https://img.shields.io/badge/FIELD-Creation%20Timestamp-purple?style=for-the-badge)
 
+![Add Item](https://img.shields.io/badge/API-Add%20Item-success?style=for-the-badge)
+![Fetch Item](https://img.shields.io/badge/API-Fetch%20Item-blue?style=for-the-badge)
+![Retrieve All](https://img.shields.io/badge/API-Retrieve%20All-yellow?style=for-the-badge)
+![Update Item](https://img.shields.io/badge/API-Update%20Item-orange?style=for-the-badge)
+![Delete Item](https://img.shields.io/badge/API-Delete%20Item-red?style=for-the-badge)
+![REST APIs](https://img.shields.io/badge/TECH-REST%20APIs-lightgrey?style=for-the-badge)
 
-## 📦 Item Fields & Supported Operations
-
-![Unique ID](https://img.shields.io/badge/Unique%20ID-blue)
-![Name](https://img.shields.io/badge/Name-green)
-![Description](https://img.shields.io/badge/Description-orange)
-![Price](https://img.shields.io/badge/Price-red)
-![Creation Timestamp](https://img.shields.io/badge/Creation%20Timestamp-purple)
-
-![Add Item](https://img.shields.io/badge/Add%20Items-success)
-![Fetch Item](https://img.shields.io/badge/Fetch%20Items-blue)
-![Retrieve All](https://img.shields.io/badge/Retrieve%20All-yellow)
-![Update Item](https://img.shields.io/badge/Update%20Item-orange)
-![Delete Item](https://img.shields.io/badge/Delete%20Item-red)
-![HTTP APIs](https://img.shields.io/badge/HTTP%20REST%20APIs-lightgrey)
 
 
 # 🚀 Key Features Implemented
 
-## 1. RESTful API Design
-### APIs follow REST principles using HTTP methods:
-   
-- Operation	    Method
-- Create item	  POST
-- Fetch item	  GET
-- Update item	  PUT
-- Delete item	  DELETE
+<details>
+<summary><b>1️⃣ RESTful API Design</b></summary>
 
-## 2. In-Memory Storage
+APIs follow REST principles using HTTP methods:
 
-- Items are stored using:
-- ArrayList<Item>
-- instead of a database.
-- This keeps the project simple and fast for demonstration purposes.
-- Note: Data resets when application restarts.
+| Operation | Method |
+|------------|--------|
+| Create item | POST |
+| Fetch item | GET |
+| Update item | PUT |
+| Delete item | DELETE |
 
-## 3. Input Validation
+</details>
 
-- User inputs are validated using annotations:
-- Item name required
-- Description required
+---
+
+<details>
+<summary><b>2️⃣ In-Memory Storage</b></summary>
+
+Items are stored using:
+
+```java
+ArrayList<Item>
+```
+
+instead of a database.
+
+This keeps the project simple and fast for demonstration purposes.
+
+⚠ Data resets when application restarts.
+
+</details>
+
+---
+
+<details>
+<summary><b>3️⃣ Input Validation</b></summary>
+
+User inputs are validated using annotations:
+
+- Item name is required
+- Description is required
 - Price must be positive
-- Invalid data returns structured error responses.
+- Invalid data returns structured error responses
 
-## 4. Exception Handling
+</details>
 
-- Global exception handling ensures:
+---
+
+<details>
+<summary><b>4️⃣ Exception Handling</b></summary>
+
+Global exception handling ensures:
+
 - Item not found errors handled
 - Validation errors returned properly
 - Clean error responses sent to client
 
-## 5. Service Layer Architecture
+</details>
 
-- The project uses:
+---
+
+<details>
+<summary><b>5️⃣ Service Layer Architecture</b></summary>
+
+The project uses:
+
 - Interface + Implementation pattern
-- to separate business logic from controllers.
-- This improves scalability and maintainability.
+- Separation of business logic from controllers
+
+This improves scalability and maintainability.
+
+</details>
+
 
 ## 6. Swagger API Documentation
 
@@ -405,25 +438,15 @@ The application implements custom exception handling and input validation to ens
 
 ### 📌 Custom Exception: ItemNotFoundException
 
-When an item is requested or deleted using an ID that does not exist, the system throws a custom exception:
+When an item is requested or deleted using an ID that does not exist, the system throws a custom exception handled globally.
 
-```
-ItemNotFoundException
-```
-
-This exception is handled globally using:
-
-```
-GlobalExceptionHandler
-```
-
-Example scenario:
+Example:
 
 ```
 GET /get/100
 ```
 
-If item ID 100 does not exist, the response will be:
+Response:
 
 ```json
 {
@@ -433,22 +456,19 @@ If item ID 100 does not exist, the response will be:
 }
 ```
 
-This prevents application crashes and returns user-friendly error messages.
+This prevents application crashes and returns user-friendly responses.
 
 ---
 
 ### ✅ Request Validation Rules
 
-The application validates incoming request data before processing.
-
-Validation rules applied:
+Incoming request data is validated before processing.
 
 | Field | Rule |
 |------|------|
 | name | Required and cannot be empty |
 | description | Required and cannot be empty |
-| price | Required |
-| price | Must be positive value |
+| price | Required and must be positive |
 
 Validation annotations used:
 
@@ -460,9 +480,12 @@ Validation annotations used:
 
 ---
 
-### ❌ Example: Invalid Request Body
+### ❌ Invalid Request Example
 
-If client sends invalid request:
+<details>
+<summary>Click to view validation failure example</summary>
+
+If client sends:
 
 ```json
 {
@@ -472,7 +495,7 @@ If client sends invalid request:
 }
 ```
 
-The API response will be:
+Response:
 
 ```json
 {
@@ -482,14 +505,7 @@ The API response will be:
 }
 ```
 
----
-
-### 📌 Benefits of Validation
-
-- Prevents incorrect data storage
-- Improves API reliability
-- Provides meaningful feedback to client
-- Ensures data consistency
+</details>
 
 ---
 
@@ -509,49 +525,56 @@ Proper Error Response Returned
 
 ---
 
-## 🛡 Result
-
+### 🛡 Result
 All errors are handled gracefully without crashing the application, ensuring robust API behavior.
 
+---
 
-
-# ✅ Technical Implementation Highlights
+## 🛠 Technical Implementation Highlights
 
 - Spring Boot REST API
-- Validation using Jakarta Validation
+- Jakarta Validation
 - Global exception handling
-
 - Layered architecture
-- Interface-based service layer
+- Service interface pattern
 - Swagger OpenAPI integration
 - Lombok usage to reduce boilerplate code
 
-# ✅ Real-World Use Case
+---
 
-- The application simulates backend services used in:
+## 🌍 Real-World Use Cases
+
+The system architecture can be applied to:
+
 - E-commerce platforms
 - Inventory management systems
-- Product catalog systems
-- Online marketplaces
+- Product catalog services
+- Marketplace platforms
 
-# ✅ Limitations (Current Scope)
+---
 
-- Since this is a demo project:
+## ⚠ Limitations (Current Scope)
+
+This project is designed for demonstration:
+
 - No database integration
-- No authentication
-- No pagination/filtering
-- Data lost on restart
+- No authentication layer
+- No pagination or filtering
+- Data resets after restart
 
-# 📦 Future Enhancements
+---
 
-## Possible upgrades:
+## 📦 Future Enhancements
+
+Planned upgrades:
 
 - Database integration
 - Authentication & authorization
-- Pagination and filtering
-- Caching
-- Docker deployment
+- Pagination & filtering
+- Caching support
+- Docker containerization
 - Cloud deployment
+
 
 
 
