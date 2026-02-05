@@ -19,7 +19,7 @@ The project is designed to demonstrate backend development skills, API design, v
 - Delete items
 - All operations are performed through HTTP APIs.
 
-# ✅ Key Features Implemented
+# 🚀 Key Features Implemented
 
 ## 1. RESTful API Design
  - APIs follow REST principles using HTTP methods:
@@ -97,7 +97,7 @@ making the code easy to maintain and extend.
 - No pagination/filtering
 - Data lost on restart
 
-# ✅ Future Enhancements
+# 📦 Future Enhancements
 
 ## Possible upgrades:
 
