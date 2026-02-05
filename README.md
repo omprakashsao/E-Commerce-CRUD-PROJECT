@@ -103,7 +103,7 @@ This improves scalability and maintainability.
 ### Swagger UI automatically documents APIs and allows testing APIs directly from browser.
 
 <p align="center">
-  <img src="./asset/open-api-definition.png" width="500" alt="Dashboard Screenshot"/>
+  <img src="./asset/open-api-definition.png" width="1000" alt="Dashboard Screenshot"/>
 </p>
 
 ## 7. Clean Project Structure
