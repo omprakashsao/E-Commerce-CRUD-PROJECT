@@ -28,4 +28,5 @@ COPY --from=builder /app/target/*.jar app.jar
 EXPOSE 8081
 
 # Run application
-ENTRYPOINT ["java","-jar","/app/app.jar"]
+ENTRYPOINT ["java","-XX:+UseSerialGC","-XX:MaxRAMPercentage=75","-jar","app.jar"]
+
