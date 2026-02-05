@@ -1,4 +1,4 @@
-# E-Commerce Item Management REST API
+# ✅ E-Commerce Item Management REST API
 This project is a Spring Boot-based RESTful backend application that provides APIs to manage items in an e-commerce-like system.
 The application allows users or client applications to perform CRUD operations (Create, Read, Update, Delete) on items through REST APIs.
 The project is designed to demonstrate backend development skills, API design, validation, and exception handling without using an external database by utilizing in-memory storage.
@@ -19,7 +19,7 @@ The project is designed to demonstrate backend development skills, API design, v
 - Delete items
 - All operations are performed through HTTP APIs.
 
-# Key Features Implemented
+# ✅ Key Features Implemented
 
 ## 1. RESTful API Design
  - APIs follow REST principles using HTTP methods:
