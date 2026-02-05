@@ -64,8 +64,13 @@ The project is designed to demonstrate backend development skills, API design, v
 
 ### Swagger UI automatically documents APIs and allows testing APIs directly from browser.
 
+<p align="center">
+  <img src="asset/open-api-definition.png" width="500" alt="Dashboard Screenshot"/>
+</p>
+
 ## 7. Clean Project Structure
 
+```
 e-commerce
 │
 ├── src/main/java/com.omps.e_commerce
@@ -91,7 +96,7 @@ e-commerce
 │
 └── resources
     └── application.properties
-
+```
 
 # ✅ Technical Implementation Highlights
 
